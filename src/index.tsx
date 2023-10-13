@@ -1,32 +1,26 @@
-import {Text} from 'react-native'
-import MaterialSymbolsOutlinedFilled from '../MaterialSymbolsOutlinedFilled.ttf';
-import MaterialSymbolsOutlinedNormal from './MaterialSymbolsOutlinedNormal.ttf';
-import MaterialSymbolsRoundedFilled from './MaterialSymbolsRoundedFilled.ttf';
-import MaterialSymbolsRoundedNormal from './MaterialSymbolsRoundedNormal.ttf';
-import MaterialSymbolsSharpFilled from './MaterialSymbolsSharpFilled.ttf';
-import MaterialSymbolsSharpNormal from './MaterialSymbolsSharpNormal.ttf';
+import {
+  requireNativeComponent,
+  UIManager,
+  Platform,
+  type ViewStyle,
+} from 'react-native';
 
-const Icon = ({
-  name,
-  style="outlined",
-  color = "black",
-  fill = false,
-  size = 24,
-  weight = '400',
-  grade = 0
-}: {
-  name: string,
-  style: "outlined" | "rounded" | "sharp",
-  color?: string,
-  fill?: boolean,
-  size?: number,
-  weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900',
-  grade?: number
-}) => {
-  return (
-    <Text>
-      {name}
-    </Text>
-  );
-}
-export default Icon;
+const LINKING_ERROR =
+  `The package '@react-native/material-symbols' doesn't seem to be linked. Make sure: \n\n` +
+  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
+  '- You rebuilt the app after installing the package\n' +
+  '- You are not using Expo Go\n';
+
+type MaterialSymbolsProps = {
+  color: string;
+  style: ViewStyle;
+};
+
+const ComponentName = 'MaterialSymbolsView';
+
+export const MaterialSymbolsView =
+  UIManager.getViewManagerConfig(ComponentName) != null
+    ? requireNativeComponent<MaterialSymbolsProps>(ComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
