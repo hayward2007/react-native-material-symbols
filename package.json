@@ -1,0 +1,31 @@
+{
+  "name": "@react-native/material-symbols",
+  "version": "1.0.0",
+  "description": "Material Symbols for React Native",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayward2007/react-native-material-symbols.git"
+  },
+  "keywords": [
+    "material-symbols",
+    "react-native"
+  ],
+  "author": "hayward_kim <hayward2007@naver.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayward2007/react-native-material-symbols/issues"
+  },
+  "homepage": "https://github.com/hayward2007/react-native-material-symbols#readme",
+  "dependencies": {
+    "react-native": "^0.72.6",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false
+}
