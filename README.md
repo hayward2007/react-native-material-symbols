@@ -1,5 +1,8 @@
 # @react-native/material-symbols
 
+⚠️Warning⚠
+This is Alpha Version! Not Working Yet!
+
 Material Symbols for React Native
 
 ## Installation
@@ -11,11 +14,12 @@ npm install @react-native/material-symbols
 ## Usage
 
 ```js
-import { MaterialSymbolsView } from "@react-native/material-symbols";
+import { Icon } from "@react-native/material-symbols";
 
 // ...
 
-<MaterialSymbolsView color="tomato" />
+<Icon>home</Icon>
+// shows home Icon
 ```
 
 ## Contributing
